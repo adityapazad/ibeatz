@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Special+Gothic&display=swap');
 
+:root{
+    --a:0;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -12,6 +16,11 @@
     width: 30px;
 }
 
+.iBeatz-logo{
+        display: flex;
+        align-items: center;
+}
+
 .left{
     width: 30vw;
     /* height: 100vh; */
@@ -21,13 +30,11 @@
 
 .right{
     width: 70vw;
-    /* height: 97.6vh; */
     max-height: 100vh;
-    margin: -5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 10px;
+    margin: 10px 10px 88px 0;
     position: relative;
+    overflow-y: auto;
+    max-height: calc(100vh - 20px);
 }
 
 .home ul li{
@@ -47,7 +54,7 @@
 }
 
 .library{
-    min-height: 76vh;
+    max-height: 75.4vh;
 }
 
 .heading img{
@@ -77,20 +84,24 @@
 
 .playlists{
     padding: 15px;
+    overflow-y: auto;
+}
+
+.playlists h1{
+    padding: 10px;
 }
 
 .container{
     height: 100vh;
-    /* overflow: ; */
 }
 
 .cardContainer{
+    margin: 30px;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    margin: 15px;
     max-height: 70vh;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .card{
@@ -99,6 +110,13 @@
     border-radius: 7.5px;
     background-color: #27323A;
     position: relative; 
+    transition: all .7;
+}
+
+.card:hover{
+    background-color: #1c242a;
+    cursor: pointer;
+    --a: 1;
 }
 
 .card img{
@@ -118,6 +136,8 @@
   position: absolute;
   top: 6.5rem;
   right: 1rem;
+  opacity: var(--a);
+  transition: all .4s ease-out;
 }
 
 .play > div {
@@ -170,19 +190,26 @@
 }
 
 .playbar{
+    box-sizing: border-box;
     position: fixed;
     bottom: 10px;
+    left: calc(30vw + 15px); /* Account for right panel's margin */
+    width: calc(70vw - 35px); /* 70vw - (right margin + padding) */
+    
     background-color: #303841;
     border-radius: 10px;
-    width: 67.3%;
-    padding: 15px;
-    height: 40px;
-    /* box-sizing: border-box; */
+    padding: 10px;
+    min-height: 40px;
+    z-index: 1000;
+    transform: translateZ(0); /* Create stacking context */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .songbuttons img{
-    width: 2.5%;
-    height: 2.5%;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
 }
 
@@ -199,7 +226,7 @@
 }
 
 .songlist{
-    padding: 0 40px;
+    padding: 0 5px;
     height: 71vh;
     overflow-y: scroll;
 }
@@ -245,6 +272,7 @@
     width: 96.5%;
     background-color: #021526;
     border-radius: 7px;
+    cursor: pointer;
 }
 
 .circle{
@@ -255,5 +283,112 @@
     position: relative;
     top: -3.2px;
     left: 0%;
-    transition: left 0.5;
+    transition: left 0.5s;
+}
+
+.songbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.songinfo{
+    width: 8vw;
+    align-items: center;
+}
+
+.songtime{
+    width: 100px;
+}
+
+.timeVol{
+    display: flex;
+    justify-content: space-between;
+}
+
+.volume{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburgerCon{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hamburger{
+    display: none;
+    height: 30px;
+    width: 30px;
+}
+
+.close{
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .left{
+        position: absolute;
+        left: -100%;
+        transition: all .3s;
+        z-index: 1;
+        width: 375px;
+        background-color: #021526;
+        padding: 0;
+    }
+
+    .left .close{
+        position: absolute;
+        right: 20px;
+        top:  37px;
+    }
+
+    /* .right{
+        margin: 0;
+    } */
+
+    .library{
+        max-height: 72.2vh;
+    }
+
+    .songlist{
+        /* padding: 0 40px; */
+        height: 100%;
+        /* overflow-y: scroll; */
+    }
+
+    .right{
+        width: 100vw;
+        margin: 8px ;
+    }
+
+    .playbar{
+        left: 2.5vw;
+        width: 95vw;
+        bottom: 20px;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    .close{
+        display: block;
+    }
+
+    .card{
+        width: 70vw;
+    }
+
+    .cardContainer{
+        justify-content: center;
+        margin: 0;
+    }
+
+    .songinfo, .songtime{
+        width: auto;
+    }
 }

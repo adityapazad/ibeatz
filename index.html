@@ -12,8 +12,19 @@
     <!-- <img id="logo" src="./images/logo.png"> -->
     <div class="container flex">
       <div class="left">
+
+        <div class="close">
+          <img class="invert" src="./svg/close.svg" alt="">
+        </div>
+
         <div class="home bg-grey rounded m-1 p-1">
-          <img src="./images/logo.png" id="logo" alt="home" />
+
+          <div class="iBeatz-logo">
+          <img src="./images/logo.png" id="logo" 
+          alt="home" />
+          <h1>iBeatz</h1>
+          </div>
+
           <ul>
             <li><img class="invert" src="./svg/home.svg" alt="home" />Home</li>
             <li>
@@ -37,8 +48,15 @@
       <div class="right bg-grey margin rounded">
         <div class="header">
           <div class="nav">
+
+            <div class="hamburgerCon">
+              <img class="invert hamburger" src="./svg/hamburger.svg" alt="">
+
             <img src="./svg/left-arrow.svg" class="invert nav-arrow" alt="" />
+
             <img src="./svg/right-arrow.svg" class="invert nav-arrow" />
+            </div>
+            
           </div>
           <div class="buttons">
             <button class="signupbtn">Sign up</button>
@@ -49,83 +67,27 @@
         <div class="playlists">
           <h1>Playlists</h1>
           <div class="cardContainer">
-            <div class="card">
+
+            <div data-folder="hh" class="card">
               <div class="play">
                 <div>
-                  <svg
-                    viewBox="-3 0 28 28"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
-                  >
-                    <title>play</title>
-                    <desc>Created with Sketch Beta.</desc>
-                    <g
-                      id="Page-1"
-                      stroke="none"
-                      stroke-width="1"
-                      fill="none"
-                      fill-rule="evenodd"
-                      sketch:type="MSPage"
-                    >
-                      <g
-                        id="Icon-Set-Filled"
-                        sketch:type="MSLayerGroup"
-                        transform="translate(-419.000000, -571.000000)"
-                        fill="#000000"
-                      >
-                        <path
-                          d="M440.415,583.554 L421.418,571.311 C420.291,570.704 419,570.767 419,572.946 L419,597.054 C419,599.046 420.385,599.36 421.418,598.689 L440.415,586.446 C441.197,585.647 441.197,584.353 440.415,583.554"
-                          id="play"
-                          sketch:type="MSShapeGroup"
-                        ></path>
-                      </g>
-                    </g>
-                  </svg>
+                  <img src="./svg/play.svg" alt="">
                 </div>
               </div>
-              <img src="./images/Happy Hits.jpg" alt="" />
-              <h2>Happy Hits!</h2>
-              <p>Hits to boost your mood and happiness</p>
+              <img src="./images/Hip Hop.jpg" alt="" />
+              <h2>Hip Hop</h2>
+              <p>Bangers that make you feel unstoppable</p>
             </div>
-            <div class="card">
+
+            <div data-folder="ncs" class="card">
               <div class="play">
                 <div>
-                  <svg
-                    viewBox="-3 0 28 28"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
-                  >
-                    <title>play</title>
-                    <desc>Created with Sketch Beta.</desc>
-                    <g
-                      id="Page-1"
-                      stroke="none"
-                      stroke-width="1"
-                      fill="none"
-                      fill-rule="evenodd"
-                      sketch:type="MSPage"
-                    >
-                      <g
-                        id="Icon-Set-Filled"
-                        sketch:type="MSLayerGroup"
-                        transform="translate(-419.000000, -571.000000)"
-                        fill="#000000"
-                      >
-                        <path
-                          d="M440.415,583.554 L421.418,571.311 C420.291,570.704 419,570.767 419,572.946 L419,597.054 C419,599.046 420.385,599.36 421.418,598.689 L440.415,586.446 C441.197,585.647 441.197,584.353 440.415,583.554"
-                          id="play"
-                          sketch:type="MSShapeGroup"
-                        ></path>
-                      </g>
-                    </g>
-                  </svg>
+                  <img src="./svg/play.svg" alt="">
                 </div>
               </div>
-              <img src="./images/Happy Hits.jpg" alt="" />
-              <h2>Happy Hits!</h2>
-              <p>Hits to boost your mood and happiness</p>
+              <img src="./images/ncs.jpeg" alt="" />
+              <h2>NCS</h2>
+              <p>Bass-heavy bangers for the late-night ride</p>
             </div>
           </div>
         </div>
@@ -133,17 +95,34 @@
         <div class="playbar">
           <div class="seekbar">
             <div class="circle">
-              
+
             </div>
           </div>
 
-          <div class="songbuttons invert">
-            <img id="previous" src="./svg/previous.svg" alt="">
-            <img id="playing" src="./svg/play.svg" alt="">
-            <img id="next" src="./svg/next.svg" alt="">
-          </div>
+          <div class="songbar">
+            <div class="songinfo">
 
-          <div class="songtime"></div>
+            </div>
+            <div class="songbuttons invert">
+              <img id="previous" src="./svg/previous.svg" alt="">
+              <img id="playing" src="./svg/play.svg" alt="">
+              <img id="next" src="./svg/next.svg" alt="">
+            </div>
+            
+            <div class="timeVol invert">
+              <div class="volume">
+                <img src="./svg/volume.svg" alt="">
+                <div class="range">
+                  <input type="range" name="volume">
+                </div>
+              </div>
+
+              <div class="songtime invert">
+
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
