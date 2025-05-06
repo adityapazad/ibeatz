@@ -100,7 +100,7 @@
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    max-height: 70vh;
+    max-height: 60vh;
     overflow-y: auto;
 }
 
@@ -190,21 +190,23 @@
 }
 
 .playbar{
-    box-sizing: border-box;
     position: fixed;
     bottom: 10px;
-    left: calc(30vw + 15px); /* Account for right panel's margin */
-    width: calc(70vw - 35px); /* 70vw - (right margin + padding) */
-    
+    left: 30vw;
+    right: 0; /* Account for right panel's margin */
+    width: 69%;
+    margin: 0 auto; /* 70vw - (right margin + padding) */
     background-color: #303841;
     border-radius: 10px;
     padding: 10px;
     min-height: 40px;
     z-index: 1000;
-    transform: translateZ(0); /* Create stacking context */
     display: flex;
     flex-direction: column;
+    
     gap: 8px;
+    box-sizing: border-box;
+    transform: translateZ(0); /* Create stacking context */
 }
 
 .songbuttons img{
@@ -313,6 +315,10 @@
     cursor: pointer;
 }
 
+.range input{
+    cursor: pointer;
+}
+
 .hamburgerCon{
     display: flex;
     align-items: center;
@@ -380,7 +386,7 @@
     }
 
     .card{
-        width: 70vw;
+        width: auto;
     }
 
     .cardContainer{
@@ -389,6 +395,21 @@
     }
 
     .songinfo, .songtime{
+        width: auto;
+    }
+
+    .cardContainer{
+    margin: 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-height: 50vh;
+    overflow-y: auto;
+}
+}
+
+@media (max-width: 450px){
+    .card{
         width: auto;
     }
 }
